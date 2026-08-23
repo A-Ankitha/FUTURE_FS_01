@@ -1,0 +1,419 @@
+/* =========================================================
+   ABOUT
+========================================================= */
+
+#about {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 520px);
+  gap: 80px;
+  align-items: center;
+}
+
+
+/* =========================================================
+   LEFT — ABOUT TEXT
+========================================================= */
+
+.about-text {
+  max-width: 680px;
+}
+
+.about-text .section-title {
+  margin-bottom: 28px;
+}
+
+.about-text p {
+  color: var(--text-dim);
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-text p:last-of-type {
+  margin-bottom: 0;
+}
+
+.about-text strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.about-text em {
+  color: var(--teal);
+  font-style: normal;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+
+/* =========================================================
+   BUILD • DEBUG • LEARN • REPEAT
+========================================================= */
+
+.about-mantra {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 34px;
+
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--text-faint);
+}
+
+.about-mantra span {
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.about-mantra i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--teal);
+  box-shadow: 0 0 8px rgba(63, 255, 241, 0.5);
+}
+
+.about-mantra span:hover {
+  color: var(--teal);
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RIGHT — GRAPHIC
+========================================================= */
+
+.about-visual {
+  width: 100%;
+  max-width: 520px;
+  justify-self: end;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Main SVG wrapper */
+
+.developer-graphic {
+  width: 100%;
+  position: relative;
+
+  animation:
+    developerFloat 6s ease-in-out infinite;
+}
+
+
+/* SVG */
+
+.developer-graphic svg {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   BACKGROUND NETWORK ANIMATION
+========================================================= */
+
+.graphic-network {
+  transform-origin: center;
+  animation:
+    networkDrift 12s ease-in-out infinite alternate;
+}
+
+.graphic-nodes {
+  animation:
+    nodePulse 3s ease-in-out infinite;
+}
+
+
+/* Individual nodes don't all pulse simultaneously */
+
+.graphic-nodes circle:nth-child(2n) {
+  animation: nodePulse 2.6s ease-in-out infinite;
+}
+
+.graphic-nodes circle:nth-child(3n) {
+  animation: nodePulse 3.4s ease-in-out infinite 0.5s;
+}
+
+
+/* =========================================================
+   CODE ICON
+========================================================= */
+
+.code-icon {
+  transform-origin: center;
+  transform-box: fill-box;
+
+  animation:
+    codeFloat 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   DEVELOPER CHARACTER
+========================================================= */
+
+.developer-character {
+  transform-origin: center;
+  transform-box: fill-box;
+
+  animation:
+    characterFloat 4.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   CARD DEPTH / GLOW
+========================================================= */
+
+.developer-graphic::before {
+  content: "";
+  position: absolute;
+
+  width: 65%;
+  height: 45%;
+
+  left: 18%;
+  top: 28%;
+
+  background: rgba(63, 255, 241, 0.08);
+  filter: blur(55px);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  animation:
+    ambientGlow 5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes developerFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+
+@keyframes networkDrift {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(4px, -5px);
+  }
+
+  100% {
+    transform: translate(-4px, 4px);
+  }
+}
+
+
+@keyframes nodePulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 0.85;
+  }
+}
+
+
+@keyframes codeFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-5px) scale(1.03);
+  }
+}
+
+
+@keyframes characterFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+
+@keyframes ambientGlow {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+
+/* =========================================================
+   HOVER INTERACTION
+========================================================= */
+
+.about-visual {
+  transition:
+    transform 0.4s ease;
+}
+
+.about-visual:hover {
+  transform: translateY(-4px);
+}
+
+.about-visual:hover .developer-graphic {
+  animation-play-state: paused;
+}
+
+.about-visual:hover .developer-character {
+  animation:
+    characterHover 2s ease-in-out infinite;
+}
+
+.about-visual:hover .graphic-nodes {
+  animation:
+    nodePulse 1.4s ease-in-out infinite;
+}
+
+
+/* Small character reaction */
+
+@keyframes characterHover {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+
+/* =========================================================
+   LIGHT MODE
+========================================================= */
+
+.light .about-visual::after {
+  content: "";
+
+  position: absolute;
+  inset: 12%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(21, 158, 150, 0.12),
+      transparent 68%
+    );
+
+  filter: blur(35px);
+
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1000px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .about-text {
+    max-width: 760px;
+  }
+
+  .about-visual {
+    max-width: 520px;
+    width: min(100%, 520px);
+    justify-self: center;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .about-grid {
+    gap: 35px;
+  }
+
+  .about-text p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .about-mantra {
+    gap: 9px;
+    font-size: 9px;
+    letter-spacing: 0.11em;
+    flex-wrap: wrap;
+  }
+
+  .about-visual {
+    width: 100%;
+    max-width: 440px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .developer-graphic,
+  .graphic-network,
+  .graphic-nodes,
+  .code-icon,
+  .developer-character,
+  .developer-graphic::before {
+    animation: none !important;
+  }
+
+  .about-visual {
+    transition: none;
+  }
+}

@@ -1,0 +1,316 @@
+/* =========================================================
+   LOADER
+========================================================= */
+
+.loader {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999;
+
+  background: #0a0e12;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  pointer-events: all;
+}
+
+
+/* =========================================================
+   INNER
+========================================================= */
+
+.loader-inner {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   SVG WORDMARK
+========================================================= */
+
+.loader-logo {
+  width: min(96vw, 1600px);
+
+  height: auto;
+
+  overflow: visible;
+
+  transform-origin: center center;
+
+  opacity: 0;
+
+  animation:
+    loaderIntro
+    0.7s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+
+/* =========================================================
+   SVG TEXT
+========================================================= */
+
+.loader-svg-text {
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 175px;
+
+  font-weight: 700;
+
+  letter-spacing: -8px;
+}
+
+
+/* =========================================================
+   GRAY BASE
+========================================================= */
+
+.loader-svg-base {
+  fill: #3f4244;
+}
+
+
+/* =========================================================
+   TEAL LIQUID
+========================================================= */
+
+.loader-svg-teal {
+  fill: #3ffff1;
+
+  /*
+    Very subtle glow.
+    The actual letters remain sharp.
+  */
+
+  filter:
+    drop-shadow(
+      0 0 8px
+      rgba(63, 255, 241, 0.12)
+    );
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+@keyframes loaderIntro {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   FINAL ZOOM
+========================================================= */
+
+.loader--exit .loader-logo {
+  animation:
+    loaderFinalZoom
+    0.8s
+    cubic-bezier(0.76, 0, 0.24, 1)
+    forwards;
+}
+
+
+@keyframes loaderFinalZoom {
+
+  0% {
+    opacity: 1;
+
+    transform:
+      scale(1);
+  }
+
+  35% {
+    opacity: 1;
+
+    transform:
+      scale(1.12);
+  }
+
+  70% {
+    opacity: 0.7;
+
+    transform:
+      scale(1.45);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      scale(1.9);
+  }
+}
+
+
+/* =========================================================
+   LOADER FADE OUT
+========================================================= */
+
+.loader--exit {
+  animation:
+    loaderFadeOut
+    0.8s
+    cubic-bezier(0.76, 0, 0.24, 1)
+    forwards;
+}
+
+
+@keyframes loaderFadeOut {
+
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+
+/* =========================================================
+   LOADING META
+========================================================= */
+
+.loader-meta {
+  position: absolute;
+
+  left: 50%;
+
+  /*
+    Align it visually with the lower-right
+    area of the word.
+  */
+
+  transform:
+    translateX(
+      clamp(
+        300px,
+        35vw,
+        600px
+      )
+    );
+
+  top: calc(
+    50% +
+    clamp(
+      90px,
+      9vw,
+      145px
+    )
+  );
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  color: #f4f7f6;
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size:
+    clamp(
+      12px,
+      1.05vw,
+      16px
+    );
+
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  font-variant-numeric:
+    tabular-nums;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.loader-progress {
+  min-width: 48px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .loader-logo {
+    width: 94vw;
+  }
+
+  .loader-svg-text {
+    font-size: 175px;
+  }
+
+  .loader-meta {
+    left: auto;
+    right: 5vw;
+
+    transform: none;
+
+    top: calc(
+      50% +
+      12vw
+    );
+
+    font-size: 10px;
+
+    gap: 10px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .loader-logo {
+    animation: none !important;
+
+    opacity: 1 !important;
+
+    transform: none !important;
+  }
+
+  .loader-svg-liquid {
+    display: block;
+  }
+
+  .loader {
+    animation: none !important;
+  }
+}

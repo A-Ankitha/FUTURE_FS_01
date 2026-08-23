@@ -1,0 +1,5 @@
+.resume-section { background: var(--bg-elev); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.resume-box { background: linear-gradient(135deg, var(--surface), var(--bg-elev)); border: 1px solid var(--border); border-radius: 14px; padding: 48px; text-align: center; }
+.resume-box h2 { font-size: 28px; margin-bottom: 10px; }
+.resume-box p { color: var(--text-dim); margin-bottom: 26px; }
+.resume-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }

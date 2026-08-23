@@ -1,0 +1,184 @@
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 64px;
+  isolation: isolate;
+  background: var(--bg);
+}
+
+/* Network background */
+.hero-network {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  overflow: hidden;
+}
+
+/* Keeps the network effect subtle enough for readable text */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* DARK MODE */
+.hero-dark .hero-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 14, 18, 0.92) 0%,
+      rgba(10, 14, 18, 0.78) 42%,
+      rgba(10, 14, 18, 0.48) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(10, 14, 18, 0.20),
+      rgba(10, 14, 18, 0.58)
+    );
+}
+
+/* LIGHT MODE */
+.hero-light .hero-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(245, 247, 249, 0.70) 0%,
+      rgba(245, 247, 249, 0.50) 42%,
+      rgba(245, 247, 249, 0.25) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(245, 247, 249, 0.10),
+      rgba(245, 247, 249, 0.25)
+    );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 64px);
+}
+
+.hero-copy {
+  max-width: 720px;
+  padding: 80px 0;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 7vw, 88px);
+  margin-bottom: 10px;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.hero .role {
+  font-family: "IBM Plex Mono", monospace;
+  color: var(--teal);
+  font-size: clamp(14px, 1.6vw, 18px);
+  margin-bottom: 24px;
+  max-width: 650px;
+}
+
+.hero p.intro {
+  color: var(--text-dim);
+  font-size: 17px;
+  line-height: 1.75;
+  max-width: 600px;
+  margin-bottom: 34px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.hero-links {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.hero-links a {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  color: var(--text-faint);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: color 0.15s ease;
+}
+
+.hero-links a:hover {
+  color: var(--teal);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero-content {
+    min-height: calc(100svh - 64px);
+  }
+
+  .hero-copy {
+    padding: 70px 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 14vw, 68px);
+  }
+
+  .hero p.intro {
+    font-size: 15.5px;
+  }
+
+  .hero-dark .hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(10, 14, 18, 0.82),
+        rgba(10, 14, 18, 0.72)
+      ),
+      linear-gradient(
+        180deg,
+        rgba(10, 14, 18, 0.18),
+        rgba(10, 14, 18, 0.68)
+      );
+  }
+
+  .hero-light .hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(245, 247, 249, 0.82),
+        rgba(245, 247, 249, 0.72)
+      ),
+      linear-gradient(
+        180deg,
+        rgba(245, 247, 249, 0.18),
+        rgba(245, 247, 249, 0.58)
+      );
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-network {
+    display: none;
+  }
+
+  .hero {
+    background: var(--bg);
+  }
+}

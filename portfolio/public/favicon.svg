@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="aa" x1="80" y1="390" x2="430" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22e6dc"/>
+      <stop offset="0.48" stop-color="#8debf0"/>
+      <stop offset="1" stop-color="#d98cff"/>
+    </linearGradient>
+
+    <linearGradient id="ring" x1="110" y1="420" x2="410" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3ffff1"/>
+      <stop offset="0.55" stop-color="#79dff0"/>
+      <stop offset="1" stop-color="#e49cff"/>
+    </linearGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <!-- transparent favicon background -->
+
+  <!-- Broken orbit ring -->
+  <path
+    d="M 402 151
+       A 187 187 0 1 1 108 374"
+    fill="none"
+    stroke="url(#ring)"
+    stroke-width="7"
+    stroke-linecap="round"
+    opacity=".82"
+    filter="url(#glow)"
+  />
+
+  <!-- Main AA / star monogram -->
+  <g
+    fill="none"
+    stroke="url(#aa)"
+    stroke-width="30"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#glow)"
+  >
+    <!-- first A -->
+    <path d="M 112 384 L 181 150 L 252 384"/>
+    <path d="M 137 304 L 226 304"/>
+
+    <!-- second A, crossing into a star -->
+    <path d="M 260 384 L 331 150 L 400 384"/>
+    <path d="M 284 304 L 374 304"/>
+  </g>
+
+  <!-- Inner star connection -->
+  <path
+    d="M 181 150 L 256 330 L 331 150"
+    fill="none"
+    stroke="url(#aa)"
+    stroke-width="24"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity=".98"
+    filter="url(#glow)"
+  />
+
+  <!-- Center sparkle -->
+  <g fill="#dffcff" filter="url(#glow)">
+    <path d="M256 276
+             C260 294 268 302 286 306
+             C268 310 260 318 256 336
+             C252 318 244 310 226 306
+             C244 302 252 294 256 276Z"/>
+  </g>
+
+  <!-- Small orbit sparkles -->
+  <g fill="#9ffaff">
+    <circle cx="402" cy="151" r="6"/>
+    <circle cx="421" cy="177" r="4"/>
+    <circle cx="438" cy="202" r="3"/>
+  </g>
+
+  <!-- Four-point star -->
+  <path
+    d="M397 88
+       C401 109 410 118 431 122
+       C410 126 401 135 397 156
+       C393 135 384 126 363 122
+       C384 118 393 109 397 88Z"
+    fill="#b9faff"
+    filter="url(#glow)"
+  />
+</svg>
