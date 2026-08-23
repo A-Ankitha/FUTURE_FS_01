@@ -1,9 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-// Future-ready: dark/light mode.
-// The whole app is dark by default (matches the design brief), but every
-// color is a CSS variable keyed off [data-theme], so light mode is already
-// live — toggle it from the Navbar or by calling useTheme() anywhere.
 const ThemeContext = createContext(null);
 
 export function ThemeProvider({ children }) {

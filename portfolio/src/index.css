@@ -5,32 +5,128 @@
   --surface: #131A23;
   --surface-2: #182029;
   --border: #232D3A;
+
   --text: #E7EDF3;
   --text-dim: #93A2B3;
   --text-faint: #5C6A7A;
+
   --teal: #4FD8C4;
-  --teal-dim: rgba(79, 216, 196, .10);
+  --teal-dim: rgba(79, 216, 196, 0.10);
+
   --amber: #F2A65A;
-  --amber-dim: rgba(242, 166, 90, .12);
+  --amber-dim: rgba(242, 166, 90, 0.12);
+
   --radius: 10px;
   --maxw: 1180px;
+
+  /* =====================================================
+     GRAPHIC — DARK MODE
+  ===================================================== */
+
+  --graphic-card-start: #101820;
+  --graphic-card-end: #071014;
+
+  --graphic-panel: #081114;
+  --graphic-panel-dark: #071014;
+
+  --graphic-screen-start: #12232A;
+  --graphic-screen-end: #081114;
+  --graphic-screen-inner: #071014;
+
+  --graphic-accent: #3FFFF1;
+  --graphic-accent-soft: #8DA5A8;
+
+  --graphic-text: #E7EDF3;
+  --graphic-muted: #6C8589;
+  --graphic-code-dim: #6C8589;
+  --graphic-status-text: #E7EDF3;
+
+  --graphic-hair: #18262D;
+  --graphic-clothes: #0B171D;
+  --graphic-skin: #F0C7AA;
+
+  --graphic-eye: #11181C;
+  --graphic-eye-highlight: #FFFFFF;
+  --graphic-smile: #9C5F56;
+
+  --graphic-headphone: #3FFFF1;
+  --graphic-glow: rgba(63, 255, 241, 0.08);
 }
 
-/* Future-ready: light theme tokens. Wired up via ThemeContext/useTheme —
-   toggle lives in the Navbar. Same structure, inverted surfaces. */
+
 [data-theme="light"] {
-  --bg: #F5F7F9;
-  --bg-elev: #FFFFFF;
-  --surface: #FFFFFF;
-  --surface-2: #EEF1F4;
-  --border: #DCE2E8;
-  --text: #101620;
-  --text-dim: #4B5A69;
-  --text-faint: #8492A1;
-  --teal: #0E9C87;
-  --teal-dim: rgba(14, 156, 135, .10);
-  --amber: #C97A2E;
-  --amber-dim: rgba(201, 122, 46, .12);
+  /* =====================================================
+     MAIN LIGHT PALETTE — SOFT LILAC
+  ===================================================== */
+
+  --bg: #E8E0F1;
+  --bg-elev: #EEE7F6;
+
+  --surface: #F0E9F7;
+  --surface-2: #E4D9F0;
+
+  --border: #CDBCE0;
+
+  --text: #30263D;
+  --text-dim: #62566F;
+  --text-faint: #887A98;
+
+  --teal: #9474D4;
+  --teal-dim: rgba(148, 116, 212, 0.13);
+
+  --amber: #D58AAA;
+  --amber-dim: rgba(213, 138, 170, 0.14);
+
+  --pink: #E8B6D0;
+  --rose: #DFA3C3;
+  --peach: #EFC4B4;
+  --mint: #B8DCCF;
+
+  --radius: 10px;
+  --maxw: 1180px;
+
+  /* Main graphic card */
+  --graphic-card-start: #F8F2FC;
+  --graphic-card-end: #DDD0ED;
+
+  /* Terminal */
+  --graphic-panel: #332A3D;
+  --graphic-panel-dark: #241D2B;
+
+  /* Laptop */
+  --graphic-screen-start: #443650;
+  --graphic-screen-end: #2A2233;
+  --graphic-screen-inner: #1F1927;
+
+  /* Accent — neon teal */
+  --graphic-accent: #ca91dd;
+  --graphic-accent-soft: #c08dde;
+
+  /* Text inside graphic */
+  --graphic-text: #F7F2FC;
+  --graphic-muted: #B8A9C5;
+  --graphic-code-dim: #9C8BAA;
+  --graphic-status-text: #F7F2FC;
+
+  /* Character */
+  --graphic-hair: #302638;
+  --graphic-skin: #F2C9B3;
+
+  /* Eyes */
+  --graphic-eye: #201A27;
+  --graphic-eye-highlight: #FFFFFF;
+
+  /* Smile */
+  --graphic-smile: #A66B7D;
+
+  /* Clothing */
+  --graphic-clothes: #5D4B70;
+
+  /* Headphones */
+  --graphic-headphone: #39E6D4;
+
+  /* Glow */
+  --graphic-glow: rgba(205, 20, 222, 0.195);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }

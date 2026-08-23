@@ -40,15 +40,11 @@ export default function Hero() {
 
         color: isDark
           ? 0x3ffff1
-          : 0x159e96,
+          : 0x9B7EDB,
 
-        /*
-         * Keep the canvas itself close to the page
-         * background for each theme.
-         */
         backgroundColor: isDark
           ? 0x0a0e12
-          : 0xf5f7f9,
+          : 0xFBF8FF,
 
         points: 10,
         maxDistance: 22,

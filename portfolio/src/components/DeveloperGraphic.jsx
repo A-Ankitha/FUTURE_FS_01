@@ -7,7 +7,9 @@ export default function DeveloperGraphic() {
         role="presentation"
       >
         <defs>
-          {/* Main card gradient */}
+          {/* =====================================================
+              MAIN CARD GRADIENT
+          ===================================================== */}
           <linearGradient
             id="cardGradient"
             x1="0"
@@ -15,11 +17,55 @@ export default function DeveloperGraphic() {
             x2="1"
             y2="1"
           >
-            <stop offset="0%" stopColor="#101820" />
-            <stop offset="100%" stopColor="#071014" />
+            <stop
+              offset="0%"
+              stopColor="var(--graphic-card-start)"
+            />
+            <stop
+              offset="100%"
+              stopColor="var(--graphic-card-end)"
+            />
           </linearGradient>
 
-          {/* Teal glow */}
+          {/* =====================================================
+              SCREEN / LAPTOP GRADIENT
+          ===================================================== */}
+          <linearGradient
+            id="screenGradient"
+            x1="0"
+            y1="0"
+            x2="1"
+            y2="1"
+          >
+            <stop
+              offset="0%"
+              stopColor="var(--graphic-screen-start)"
+            />
+            <stop
+              offset="100%"
+              stopColor="var(--graphic-screen-end)"
+            />
+          </linearGradient>
+
+          {/* =====================================================
+              SOFT ACCENT GLOW
+          ===================================================== */}
+          <radialGradient id="softGlow">
+            <stop
+              offset="0%"
+              stopColor="var(--graphic-accent)"
+              stopOpacity="0.14"
+            />
+            <stop
+              offset="100%"
+              stopColor="var(--graphic-accent)"
+              stopOpacity="0"
+            />
+          </radialGradient>
+
+          {/* =====================================================
+              SMALL NEON GLOW
+          ===================================================== */}
           <filter
             id="tealGlow"
             x="-100%"
@@ -31,13 +77,16 @@ export default function DeveloperGraphic() {
               stdDeviation="6"
               result="blur"
             />
+
             <feMerge>
               <feMergeNode in="blur" />
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
 
-          {/* Stronger glow */}
+          {/* =====================================================
+              CARD GLOW
+          ===================================================== */}
           <filter
             id="strongGlow"
             x="-100%"
@@ -49,47 +98,16 @@ export default function DeveloperGraphic() {
               stdDeviation="12"
               result="blur"
             />
+
             <feMerge>
               <feMergeNode in="blur" />
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
-
-          {/* Soft background glow */}
-          <radialGradient id="softGlow">
-            <stop
-              offset="0%"
-              stopColor="#3ffff1"
-              stopOpacity="0.20"
-            />
-            <stop
-              offset="100%"
-              stopColor="#3ffff1"
-              stopOpacity="0"
-            />
-          </radialGradient>
-
-          {/* Screen gradient */}
-          <linearGradient
-            id="screenGradient"
-            x1="0"
-            y1="0"
-            x2="1"
-            y2="1"
-          >
-            <stop
-              offset="0%"
-              stopColor="#12232a"
-            />
-            <stop
-              offset="100%"
-              stopColor="#081114"
-            />
-          </linearGradient>
         </defs>
 
         {/* =====================================================
-            FLOATING BACKGROUND GLOW
+            BACKGROUND GLOW
         ===================================================== */}
 
         <circle
@@ -106,7 +124,7 @@ export default function DeveloperGraphic() {
         <g
           className="graphic-network"
           fill="none"
-          stroke="#3ffff1"
+          stroke="var(--graphic-accent)"
           strokeWidth="1"
           opacity="0.35"
         >
@@ -120,11 +138,13 @@ export default function DeveloperGraphic() {
           <path d="M290 280 L350 330 L400 350" />
         </g>
 
-        {/* Network nodes */}
+        {/* =====================================================
+            NETWORK NODES
+        ===================================================== */}
 
         <g
           className="graphic-nodes"
-          fill="#3ffff1"
+          fill="var(--graphic-accent)"
           filter="url(#tealGlow)"
         >
           <circle cx="50" cy="100" r="3" />
@@ -157,7 +177,7 @@ export default function DeveloperGraphic() {
           height="510"
           rx="30"
           fill="url(#cardGradient)"
-          stroke="#3ffff1"
+          stroke="var(--graphic-accent)"
           strokeOpacity="0.65"
           strokeWidth="1.5"
         />
@@ -171,7 +191,7 @@ export default function DeveloperGraphic() {
           height="510"
           rx="30"
           fill="none"
-          stroke="#3ffff1"
+          stroke="var(--graphic-accent)"
           strokeOpacity="0.15"
           strokeWidth="8"
           filter="url(#strongGlow)"
@@ -187,23 +207,25 @@ export default function DeveloperGraphic() {
           width="150"
           height="100"
           rx="14"
-          fill="#081114"
-          stroke="#3ffff1"
+          fill="var(--graphic-panel)"
+          stroke="var(--graphic-accent)"
           strokeOpacity="0.35"
         />
+
+        {/* Terminal dots */}
 
         <circle
           cx="95"
           cy="103"
           r="4"
-          fill="#3ffff1"
+          fill="var(--graphic-accent)"
         />
 
         <circle
           cx="108"
           cy="103"
           r="4"
-          fill="#3ffff1"
+          fill="var(--graphic-accent)"
           opacity="0.5"
         />
 
@@ -211,14 +233,16 @@ export default function DeveloperGraphic() {
           cx="121"
           cy="103"
           r="4"
-          fill="#3ffff1"
+          fill="var(--graphic-accent)"
           opacity="0.25"
         />
+
+        {/* Terminal text */}
 
         <text
           x="94"
           y="130"
-          fill="#8da5a8"
+          fill="var(--graphic-code-dim)"
           fontSize="12"
           fontFamily="monospace"
         >
@@ -228,7 +252,7 @@ export default function DeveloperGraphic() {
         <text
           x="94"
           y="149"
-          fill="#3ffff1"
+          fill="var(--graphic-muted)"
           fontSize="12"
           fontFamily="monospace"
         >
@@ -238,7 +262,7 @@ export default function DeveloperGraphic() {
         <text
           x="94"
           y="168"
-          fill="#8da5a8"
+          fill="var(--graphic-accent)"
           fontSize="12"
           fontFamily="monospace"
         >
@@ -252,7 +276,7 @@ export default function DeveloperGraphic() {
         <g
           className="code-icon"
           transform="translate(365 115)"
-          stroke="#3ffff1"
+          stroke="var(--graphic-accent)"
           strokeWidth="5"
           fill="none"
           strokeLinecap="round"
@@ -270,6 +294,7 @@ export default function DeveloperGraphic() {
         <g className="developer-character">
 
           {/* Hair */}
+
           <path
             d="
               M205 225
@@ -279,19 +304,21 @@ export default function DeveloperGraphic() {
               L215 260
               Z
             "
-            fill="#18262d"
+            fill="var(--graphic-hair)"
           />
 
           {/* Head */}
+
           <ellipse
             cx="275"
             cy="225"
             rx="62"
             ry="72"
-            fill="#f0c7aa"
+            fill="var(--graphic-skin)"
           />
 
-          {/* Hair front */}
+          {/* Front hair */}
+
           <path
             d="
               M215 210
@@ -301,10 +328,11 @@ export default function DeveloperGraphic() {
               C260 210 240 220 215 225
               Z
             "
-            fill="#17232a"
+            fill="var(--graphic-hair)"
           />
 
           {/* Headphones */}
+
           <path
             d="
               M210 225
@@ -312,20 +340,21 @@ export default function DeveloperGraphic() {
               C325 130 350 165 345 225
             "
             fill="none"
-            stroke="#3ffff1"
+            stroke="var(--graphic-accent)"
             strokeWidth="10"
             strokeLinecap="round"
           />
 
           {/* Headphone cups */}
+
           <rect
             x="201"
             y="212"
             width="22"
             height="48"
             rx="10"
-            fill="#0c1519"
-            stroke="#3ffff1"
+            fill="var(--graphic-panel-dark)"
+            stroke="var(--graphic-accent)"
             strokeWidth="4"
           />
 
@@ -335,18 +364,19 @@ export default function DeveloperGraphic() {
             width="22"
             height="48"
             rx="10"
-            fill="#0c1519"
-            stroke="#3ffff1"
+            fill="var(--graphic-panel-dark)"
+            stroke="var(--graphic-accent)"
             strokeWidth="4"
           />
 
           {/* Eyes */}
+
           <ellipse
             cx="253"
             cy="226"
             rx="7"
             ry="9"
-            fill="#11181c"
+            fill="var(--graphic-eye)"
           />
 
           <ellipse
@@ -354,34 +384,37 @@ export default function DeveloperGraphic() {
             cy="226"
             rx="7"
             ry="9"
-            fill="#11181c"
+            fill="var(--graphic-eye)"
           />
 
           {/* Eye highlights */}
+
           <circle
             cx="255"
             cy="223"
             r="2"
-            fill="#fff"
+            fill="var(--graphic-eye-highlight)"
           />
 
           <circle
             cx="299"
             cy="223"
             r="2"
-            fill="#fff"
+            fill="var(--graphic-eye-highlight)"
           />
 
           {/* Smile */}
+
           <path
             d="M264 250 Q275 258 286 250"
             fill="none"
-            stroke="#9c5f56"
+            stroke="var(--graphic-smile)"
             strokeWidth="2"
             strokeLinecap="round"
           />
 
           {/* Hoodie */}
+
           <path
             d="
               M205 285
@@ -391,38 +424,29 @@ export default function DeveloperGraphic() {
               L175 405
               Z
             "
-            fill="#101b21"
-            stroke="#3ffff1"
+            fill="var(--graphic-clothes)"
+            stroke="var(--graphic-accent)"
             strokeOpacity="0.3"
           />
 
           {/* Hoodie strings */}
+
           <path
             d="M258 282 L250 320"
-            stroke="#3ffff1"
+            stroke="var(--graphic-accent)"
             strokeWidth="2"
           />
 
           <path
             d="M292 282 L300 320"
-            stroke="#3ffff1"
+            stroke="var(--graphic-accent)"
             strokeWidth="2"
           />
 
-          {/* Developer symbol */}
-          <g
-            transform="translate(275 335)"
-            stroke="#3ffff1"
-            strokeWidth="3"
-            fill="none"
-            strokeLinecap="round"
-          >
-            <path d="M-12 -8 L-22 0 L-12 8" />
-            <path d="M12 -8 L22 0 L12 8" />
-            <path d="M5 -10 L-5 10" />
-          </g>
+          {/* =================================================
+              LAPTOP
+          ================================================= */}
 
-          {/* Laptop */}
           <rect
             x="160"
             y="365"
@@ -430,7 +454,7 @@ export default function DeveloperGraphic() {
             height="105"
             rx="10"
             fill="url(#screenGradient)"
-            stroke="#3ffff1"
+            stroke="var(--graphic-accent)"
             strokeWidth="2"
           />
 
@@ -440,10 +464,11 @@ export default function DeveloperGraphic() {
             width="200"
             height="70"
             rx="5"
-            fill="#071014"
+            fill="var(--graphic-screen-inner)"
           />
 
           {/* Laptop code */}
+
           <g
             fontFamily="monospace"
             fontSize="9"
@@ -451,7 +476,7 @@ export default function DeveloperGraphic() {
             <text
               x="190"
               y="402"
-              fill="#3ffff1"
+              fill="var(--graphic-accent)"
             >
               &gt; const idea = true;
             </text>
@@ -459,7 +484,7 @@ export default function DeveloperGraphic() {
             <text
               x="190"
               y="418"
-              fill="#6c8589"
+              fill="var(--graphic-code-dim)"
             >
               &gt; build(idea)
             </text>
@@ -467,13 +492,14 @@ export default function DeveloperGraphic() {
             <text
               x="190"
               y="434"
-              fill="#3ffff1"
+              fill="var(--graphic-accent)"
             >
               &gt; ship();
             </text>
           </g>
 
           {/* Laptop base */}
+
           <path
             d="
               M145 470
@@ -482,8 +508,8 @@ export default function DeveloperGraphic() {
               L125 480
               Z
             "
-            fill="#172329"
-            stroke="#3ffff1"
+            fill="var(--graphic-panel-dark)"
+            stroke="var(--graphic-accent)"
             strokeOpacity="0.4"
           />
 
@@ -499,8 +525,8 @@ export default function DeveloperGraphic() {
           width="364"
           height="58"
           rx="14"
-          fill="#081114"
-          stroke="#3ffff1"
+          fill="var(--graphic-panel-dark)"
+          stroke="var(--graphic-accent)"
           strokeOpacity="0.4"
         />
 
@@ -508,7 +534,7 @@ export default function DeveloperGraphic() {
           x="260"
           y="452"
           textAnchor="middle"
-          fill="#6d898d"
+          fill="var(--graphic-muted)"
           fontSize="9"
           letterSpacing="3"
           fontFamily="monospace"
@@ -520,15 +546,19 @@ export default function DeveloperGraphic() {
           x="260"
           y="474"
           textAnchor="middle"
-          fill="#f2f7f7"
+          fill="var(--graphic-status-text)"
           fontSize="14"
           fontWeight="600"
           fontFamily="Inter, sans-serif"
         >
           Web
-          <tspan fill="#3ffff1"> • </tspan>
+          <tspan fill="var(--graphic-accent)">
+            {" • "}
+          </tspan>
           AI
-          <tspan fill="#3ffff1"> • </tspan>
+          <tspan fill="var(--graphic-accent)">
+            {" • "}
+          </tspan>
           Security
         </text>
 
@@ -542,8 +572,8 @@ export default function DeveloperGraphic() {
           width="364"
           height="34"
           rx="17"
-          fill="#0c171b"
-          stroke="#3ffff1"
+          fill="var(--graphic-panel-dark)"
+          stroke="var(--graphic-accent)"
           strokeOpacity="0.45"
         />
 
@@ -551,14 +581,14 @@ export default function DeveloperGraphic() {
           cx="97"
           cy="527"
           r="5"
-          fill="#3ffff1"
+          fill="var(--graphic-accent)"
           filter="url(#tealGlow)"
         />
 
         <text
           x="112"
           y="531"
-          fill="#a9bbbd"
+          fill="var(--graphic-muted)"
           fontSize="10"
           fontFamily="monospace"
         >
