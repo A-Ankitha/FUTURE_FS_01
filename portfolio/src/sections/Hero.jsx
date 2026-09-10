@@ -106,10 +106,12 @@ export default function Hero() {
             </a>
 
             <a
-              href="#resume"
+              href="/Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-ghost"
             >
-              View Resume
+              View Resume ↗
             </a>
           </div>
 
