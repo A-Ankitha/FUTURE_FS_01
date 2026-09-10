@@ -8,7 +8,7 @@ export const site = {
   email: "avankitha.10a@gmail.com",
   github: "https://github.com/A-Ankitha", 
   linkedin: "https://www.linkedin.com/in/aankitha/",
-  resumeUrl: "../../public/Resume.pdf",
+  resumeUrl: "/Resume.pdf",
 };
 
 export const nav = [
