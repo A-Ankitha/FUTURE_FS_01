@@ -53,7 +53,7 @@ export const projects = [
     contribution:
       "Developing the frontend interface and integrating it with the Python FastAPI backend, while working on real-time network monitoring, Wireshark/TShark packet capture, network metadata extraction, behavioral analysis, and the trust-scoring workflow.",
 
-    github: "#",
+    github: "https://github.com/A-Ankitha/CogniFi",
     demo: null
   },
 
@@ -106,8 +106,8 @@ export const projects = [
     contribution:
       "Developing the full-stack application, including the React frontend, resume editing workflow, template system, live previews, REST API integration, authentication, MongoDB data handling, and AI-assisted resume content generation.",
 
-    github: "#",
-    demo: null
+    github: "https://github.com/A-Ankitha/ResuVibe",
+    demo: "https://resume-builder-theta-amber.vercel.app/"
   },
 
   {
@@ -148,8 +148,8 @@ export const projects = [
     contribution:
       "Developed the React frontend, implemented frontend routing, integrated the REST APIs, and worked with the Node.js, Express.js, and MongoDB backend.",
 
-    github: "#",
-    demo: null
+    github: "https://github.com/A-Ankitha",
+    demo: "https://frontend-beige-eight-97.vercel.app/"
   },
 
   {
@@ -188,7 +188,7 @@ export const projects = [
 
     contribution: "Designed and implemented the phishing detection workflow, heuristic-based risk scoring, URL and DOM analysis, browser-extension logic, and interactive risk visualization.",
 
-    github: "#",
+    github: "https://github.com/A-Ankitha/ClickDefender",
     demo: null,
   },
 
@@ -234,7 +234,7 @@ export const projects = [
     contribution:
       "Developed the frontend interface, integrated the Express.js backend with the Google Gemini AI service, implemented the mood-based recommendation workflow, and connected the frontend with the AI-powered travel APIs.",
 
-    github: "#",
+    github: "https://github.com/A-Ankitha/MoodScape-Travel",
     demo: null
   },
 ];
